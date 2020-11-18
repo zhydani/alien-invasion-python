@@ -24,15 +24,8 @@ def run_game():
 
     # Inicia o laço principal do jogo
     while True:
-        # observa eventos de teclado e mouse
         gf.check_events()
-
-        # redesenha a tela a cada passagem pelo laco
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
-
-        # deixa a tela mais recente visível
-        pygame.display.flip()
+        gf.update_screen(ai_settings, screen, ship)
 
 
 run_game()
