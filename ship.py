@@ -19,11 +19,14 @@ class Ship():
 
         # flag de movimento
         self.moving_right = False
+        self.moving_left = False
 
     def update(self):
         # atualiza a posicao da espaco nave de acordo com a flag de movimento
         if self.moving_right:
             self.rect.centerx += 1
+        if self.moving_left:
+            self.rect.centerx -= 1
 
     def blitme(self):
         # desenha a espaconave em sua posicao atual
