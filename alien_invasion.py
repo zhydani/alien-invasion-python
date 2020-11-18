@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 import sys
 import pygame
 
 from settings import Settings
+from ship import Ship
 
 
 def run_game():
@@ -15,6 +17,8 @@ def run_game():
     )
     pygame.display.set_caption("Alien Invasion")
 
+    ship = Ship(screen)
+
     bg_color = (230, 230, 230)
 
     # Inicia o laço principal do jogo
@@ -26,6 +30,7 @@ def run_game():
 
         # redesenha a tela a cada passagem pelo laco
         screen.fill(ai_settings.bg_color)
+        ship.blitme()
 
         # deixa a tela mais recente visível
         pygame.display.flip()
