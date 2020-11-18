@@ -4,6 +4,7 @@ import pygame
 
 from settings import Settings
 from ship import Ship
+import game_functions as gf
 
 
 def run_game():
@@ -24,9 +25,7 @@ def run_game():
     # Inicia o laço principal do jogo
     while True:
         # observa eventos de teclado e mouse
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+        gf.check_events()
 
         # redesenha a tela a cada passagem pelo laco
         screen.fill(ai_settings.bg_color)
