@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Settings():
     # uma classe para armazenar todas as configuracoes do jogo
 
