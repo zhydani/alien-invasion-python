@@ -50,3 +50,14 @@ def update_screen(ai_settings, screen, ship, bullets):
 
     # deixa a tela mais recente visível
     pygame.display.flip()
+
+
+def update_bullets(bullets):
+    # atualiza a posicao dos projeteis e se livra dos antigos
+    # atualiza as posicoes
+    bullets.update()
+
+    # livra-se dos projeteis antigos
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
