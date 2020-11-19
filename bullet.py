@@ -7,7 +7,7 @@ class Bullet(Sprite):
     # uma classe que administra projeteis disparados pela nave
     def __init__(self, ai_settings, screen, ship):
         # cria um objeto para o projetil na posicao atual da spaceship
-        super(Bullet, self).__init__
+        super(Bullet, self).__init__()
         self.screen = screen
 
         # cria um retangulo para o projetil em (0, 0) e em seguida define a posicao correta
@@ -18,6 +18,7 @@ class Bullet(Sprite):
 
         # armazena a posicao do projetil como um valor decimal
         self.y = float(self.rect.y)
+
         self.color = ai_settings.bullet_color
         self.speed_factor = ai_settings.bullet_speed_factor
 

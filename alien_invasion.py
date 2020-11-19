@@ -5,6 +5,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 import game_functions as gf
+from pygame.sprite import Group
 
 
 def run_game():
@@ -20,13 +21,17 @@ def run_game():
 
     ship = Ship(ai_settings, screen)
 
+    # cria um grupo no qual serao armazenados os projeteis
+    bullets = Group()
+
     bg_color = (230, 230, 230)
 
     # Inicia o laco principal do jogo
     while True:
-        gf.check_events(ship)
+        gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_screen(ai_settings, screen, ship)
+        bullets.update()
+        gf.update_screen(ai_settings, screen, ship, bullets)
 
 
 run_game()
