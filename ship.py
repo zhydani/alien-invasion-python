@@ -27,9 +27,10 @@ class Ship():
 
     def update(self):
         # atualiza a posicao da espaco nave de acordo com a flag de movimento
-        if self.moving_right:
+        # atualiza o valor do centro da nave e nao o retangulo
+        if self.moving_right and self.rect.right < self.screen_rect.right:
             self.center += self.ai_settings.ship_speed_factor
-        if self.moving_left:
+        if self.moving_left and self.rect.left > 0:
             self.center -= self.ai_settings.ship_speed_factor
 
         # atualiza o objeto rect de acordo com o self.center
