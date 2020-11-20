@@ -24,6 +24,10 @@ def run_game():
 
     # cria um grupo no qual serao armazenados os projeteis
     bullets = Group()
+    aliens = Group()
+
+    # cria a frotaa de alienigenas
+    gf.create_fleet(ai_settings, screen, aliens)
 
     bg_color = (230, 230, 230)
 
@@ -37,7 +41,7 @@ def run_game():
 
         gf.update_bullets(bullets)
 
-        gf.update_screen(ai_settings, screen, ship, alien, bullets)
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 
 run_game()
