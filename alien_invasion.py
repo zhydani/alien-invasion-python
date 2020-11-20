@@ -4,6 +4,7 @@ import pygame
 
 from settings import Settings
 from ship import Ship
+from alien import Alien
 import game_functions as gf
 from pygame.sprite import Group
 
@@ -26,6 +27,8 @@ def run_game():
 
     bg_color = (230, 230, 230)
 
+    alien = Alien(ai_settings, screen)
+
     # Inicia o laco principal do jogo
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
@@ -34,7 +37,7 @@ def run_game():
 
         gf.update_bullets(bullets)
 
-        gf.update_screen(ai_settings, screen, ship, bullets)
+        gf.update_screen(ai_settings, screen, ship, alien, bullets)
 
 
 run_game()
