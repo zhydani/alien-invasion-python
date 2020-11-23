@@ -24,3 +24,8 @@ class Alien(Sprite):
     def blitme(self):
         # desenha o alienigena em sua posicao atual 
         self.screen.blit(self.image, self.rect)
+
+    def update(self):
+        # Move o alienigena para a direita
+        self.x += self.ai_settings.alien_speed_factor
+        self.rect.x = self.x
